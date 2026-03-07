@@ -1,3 +1,7 @@
+:root {
+  font-size: 16px;
+}
+
 body {
   font-family: 'Lato', sans-serif;
 }
@@ -5,14 +9,13 @@ body {
 .grid-container {
   display: grid;
   height: 100vh; /* Optional: Makes the container take the full viewport height */
-  grid-template-columns: 250px 1fr; /* Fixed 250px sidebar, rest for content */
+  grid-template-columns: 20vw 1fr; /* 20% width sidebar, rest for content */
   grid-template-rows: auto 1fr auto; /* Header height, main content fills space, footer height */
   grid-template-areas:
-    "header header"
+    "header main"
     "sidebar main"
     "sidebar footer";
 }
-
 header {
   grid-area: header;
   position: fixed;
@@ -20,7 +23,7 @@ header {
 
 header h1 {
   font-family: 'Lato', sans-serif;
-  font-size: 128px;
+  font-size: clamp(2rem, 5vw, 20vh);
   font-weight: 600;
   letter-spacing: -0.1em;
 }
@@ -49,7 +52,7 @@ nav ul {
 
 nav a{
   font-family: 'Lato', sans-serif;
-  font-size: 64px;
+  font-size: 4rem;
   letter-spacing: -0.08em;
   text-decoration:none;
   color: black;
