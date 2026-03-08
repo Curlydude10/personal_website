@@ -9,12 +9,12 @@ body {
 .grid-container {
   display: grid;
   height: 100vh; /* Optional: Makes the container take the full viewport height */
-  grid-template-columns: 20vw 1fr; /* 20% width sidebar, rest for content */
+  grid-template-columns: 1fr minmax(0, 720px) 1fr; /* 20% width sidebar, rest for content */
   grid-template-rows: auto 1fr auto; /* Header height, main content fills space, footer height */
   grid-template-areas:
     "header main"
     "sidebar main"
-    "sidebar footer";
+    "footer footer";
 }
 header {
   grid-area: header;
@@ -23,7 +23,7 @@ header {
 
 header h1 {
   font-family: 'Lato', sans-serif;
-  font-size: clamp(2rem, 5vw, 20vh);
+  font-size: clamp(1rem, 3vw, 3rem);
   font-weight: 600;
   letter-spacing: -0.1em;
 }
@@ -35,12 +35,9 @@ header h1 {
   position: fixed;
 }
 
-main {
-  grid-area: main;
-}
-
 footer {
   grid-area: footer;
+  grid-column: span(3);
 }
 
 nav ul {
@@ -52,14 +49,16 @@ nav ul {
 
 nav a{
   font-family: 'Lato', sans-serif;
-  font-size: 4rem;
+  font-size: clamp(1rem, 2vw, 2.5rem);;
   letter-spacing: -0.08em;
   text-decoration:none;
   color: black;
 }
 
 main {
-  max-width:720px; 
+  grid-area: main;
+  flex: 600px 0 1;
   margin:48px auto; 
   padding:0 24px;
+  text-align: justify;
 }
