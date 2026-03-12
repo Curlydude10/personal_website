@@ -6,38 +6,43 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.landing-page {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-page h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.1em;
+  text-align: center;
+  font-size: clamp(5rem, 10vw, 20rem);
+}
+
 .grid-container {
   display: grid;
   height: 100vh; /* Optional: Makes the container take the full viewport height */
   grid-template-columns: 1fr minmax(0, 720px) 1fr; /* 20% width sidebar, rest for content */
-  grid-template-rows: auto 1fr auto; /* Header height, main content fills space, footer height */
+  /* grid-template-rows: 1fr auto; /* main content fills space, footer height */
   grid-template-areas:
-    "header main"
     "sidebar main"
     "footer footer";
-}
-header {
-  grid-area: header;
-  position: fixed;
-}
-
-header h1 {
-  font-family: 'Lato', sans-serif;
-  font-size: clamp(1rem, 3vw, 3rem);
-  font-weight: 600;
-  letter-spacing: -0.1em;
 }
 
 .site-nav{
   grid-area: sidebar;
   /* Add styling for fixed positioning and scrolling if needed */
   /* overflow-y: auto; position: fixed; height: 100%; */
-  position: fixed;
+  position: sticky;
+  top: 0;
 }
 
 footer {
   grid-area: footer;
-  grid-column: span(3);
+  grid-column: span(2);
 }
 
 nav ul {
@@ -49,7 +54,7 @@ nav ul {
 
 nav a{
   font-family: 'Lato', sans-serif;
-  font-size: clamp(1rem, 2vw, 2.5rem);;
+  font-size: clamp(1.5rem, 3.5vw, 3rem);;
   letter-spacing: -0.08em;
   text-decoration:none;
   color: black;
@@ -58,7 +63,10 @@ nav a{
 main {
   grid-area: main;
   flex: 600px 0 1;
-  margin:48px auto; 
+  margin: 0 auto; 
   padding:0 24px;
   text-align: justify;
+}
+
+main h2 {
 }
