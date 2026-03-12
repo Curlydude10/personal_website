@@ -1,5 +1,5 @@
 :root {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 body {
@@ -55,8 +55,9 @@ nav ul {
 nav a{
   font-family: 'Lato', sans-serif;
   font-size: clamp(1.5rem, 3.5vw, 3rem);;
+  font-weight: 500;
   letter-spacing: -0.08em;
-  text-decoration:none;
+  text-decoration: none;
   color: black;
 }
 
@@ -69,4 +70,7 @@ main {
 }
 
 main h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 0;
 }
